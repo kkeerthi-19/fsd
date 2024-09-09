@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide and Show Element</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #toggleElement {
+            width: 200px;
+            height: 100px;
+            background-color: lightcoral;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="toggleElement">Hide/Show Me!</div>
+
+    <script>
+        $(document).ready(function() {
+            var intervalDuration = 1000; 
+            var isVisible = true;
+
+            setInterval(function() {
+                if (isVisible) {
+                    $('#toggleElement').hide();
+                } else {
+                    $('#toggleElement').show();
+                }
+                isVisible = !isVisible; 
+            }, intervalDuration);
+        });
+    </script>
+</body>
+</html>
